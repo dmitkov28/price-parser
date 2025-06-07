@@ -3,6 +3,7 @@ module github.com/dmitkov28/price-parser
 go 1.24.0
 
 require (
+	github.com/Oudwins/tailwind-merge-go v0.2.1
 	github.com/a-h/templ v0.3.898
 	github.com/labstack/echo/v4 v4.13.4
 )
