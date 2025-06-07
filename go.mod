@@ -1,8 +1,6 @@
 module github.com/dmitkov28/price-parser
 
-go 1.23.0
-
-toolchain go1.23.10
+go 1.24.0
 
 require (
 	github.com/a-h/templ v0.3.898
