@@ -1,0 +1,17 @@
+package templates
+
+import "github.com/dmitkov28/price-parser/internal/data"
+import "strconv"
+
+templ ProductList(products []data.Product) {
+	<ul>
+		for _, product := range products {
+			<li class="grid grid-cols-1 my-4">
+				<a href={product.URL} class="font-bold flex items-center gap-2">
+					{ product.Name }
+					@PriceTag(strconv.FormatFloat(product.Price, 'f', 2, 64))
+				</a>
+			</li>
+		}
+	</ul>
+}
