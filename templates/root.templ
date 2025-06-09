@@ -1,21 +1,16 @@
 package templates
 
-import "github.com/dmitkov28/price-parser/components/card"
-
 templ Root() {
 	<html>
 		<link rel="stylesheet" href="/static/css/output.css"/>
-		<h1 class="text-red-500">Hello World</h1>
-		@card.Card() {
-			@card.Title() {
-				Card Title
-			}
-			@card.Description() {
-				Card Description
-			}
-			@card.Content() {
-				Card Content
-			}
-		}
+		<script src="https://unpkg.com/htmx.org@1.9.10"></script>
+		@SearchForm()
+		<div id="search-results">
+			@Loading()
+		</div>
 	</html>
+}
+
+templ Loading() {
+	<div id="loading" class="htmx-indicator">...</div>
 }
