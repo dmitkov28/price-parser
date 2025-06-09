@@ -9,5 +9,6 @@ func main() {
 	e := echo.New()
 	e.Static("/static", "assets")
 	e.GET("/", handler.RootGETHandler())
+	e.GET("/search", handler.SearchGetHandler())
 	e.Logger.Fatal(e.Start(":1323"))
 }
