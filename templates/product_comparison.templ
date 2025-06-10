@@ -1,0 +1,16 @@
+package templates
+
+import "github.com/dmitkov28/price-parser/internal/data"
+
+templ ProductComparison(ardesProducts []data.Product, technomarketProducts []data.Product) {
+	<div class="grid grid-cols-2">
+		<div class="col-span-2 md:col-span-1">
+			<h2>Ardes</h2>
+			@ProductList(ardesProducts)
+		</div>
+		<div class="col-span-2 md:col-span-1">
+			<h2>Technomarket</h2>
+			@ProductList(technomarketProducts)
+		</div>
+	</div>
+}
