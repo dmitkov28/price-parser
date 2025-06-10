@@ -20,15 +20,27 @@ func SearchGetHandler() echo.HandlerFunc {
 		query := c.QueryParam("query")
 		encodedQuery := url.QueryEscape(query)
 
-		rawData, err := data.FetchArdes(encodedQuery)
+		rawArdesData, err := data.FetchArdes(encodedQuery)
 		if err != nil {
 			fmt.Printf("%v", err)
 		}
+
+		rawTechnoMarketData, err := data.FetchTechnoMarket(encodedQuery)
+
+		if err != nil {
+			fmt.Printf("%v", err)
+		}
+
 		ardesAdapter := data.ArdesAdapter{}
-		products, err := ardesAdapter.Transform(rawData)
+		ardesProducts, err := ardesAdapter.Transform(rawArdesData)
 		if err != nil {
 			fmt.Printf("%v", err)
 		}
-		return render(c, templates.ProductList(products))
+
+		technoMarketAdapter := data.TechnoMarketAdapter{}
+		technoMarketProducts, err := technoMarketAdapter.Transform(rawTechnoMarketData)
+
+		fmt.Println(technoMarketProducts)
+		return render(c, templates.ProductComparison(ardesProducts, technoMarketProducts))
 	}
 }
