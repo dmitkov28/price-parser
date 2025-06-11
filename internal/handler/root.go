@@ -40,7 +40,6 @@ func SearchGetHandler() echo.HandlerFunc {
 		technoMarketAdapter := data.TechnoMarketAdapter{}
 		technoMarketProducts, err := technoMarketAdapter.Transform(rawTechnoMarketData)
 
-		fmt.Println(technoMarketProducts)
 		return render(c, templates.ProductComparison(ardesProducts, technoMarketProducts))
 	}
 }
