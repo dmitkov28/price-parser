@@ -29,7 +29,7 @@ func SearchForm() templ.Component {
 			templ_7745c5c3_Var1 = templ.NopComponent
 		}
 		ctx = templ.ClearChildren(ctx)
-		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 1, "<form hx-get=\"/search\" hx-target=\"#search-results\" hx-indicator=\"#loading\" class=\"max-w-[500px] bg-gray-100 p-4 rounded-lg shadow-md\"><input name=\"query\" class=\"border border-gray-300 bg-white rounded-lg p-2 w-full mb-2 focus:outline-none focus:ring-2 focus:ring-blue-500\" placeholder=\"Macbook pro\" type=\"text\"> <button class=\"bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 transition cursor-pointer\">Search</button></form>")
+		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 1, "<form hx-get=\"/search\" hx-target=\"#search-results\" hx-indicator=\"#loading\" class=\"w-full p-4 rounded-lg shadow-md\"><input name=\"query\" class=\"border border-gray-300 bg-white rounded-lg p-2 w-full mb-2 focus:outline-none focus:ring-1 focus:ring-black\" placeholder=\"Macbook pro\" type=\"text\"> <button class=\"bg-black w-full text-white px-4 py-2 rounded-lg transition cursor-pointer\">Search</button></form>")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
