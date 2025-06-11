@@ -4,7 +4,9 @@ templ Root() {
 	<html>
 		<link rel="stylesheet" href="/static/css/output.css"/>
 		<script src="https://unpkg.com/htmx.org@1.9.10"></script>
-		@SearchForm()
+		<div class="w-full p-3 flex items-center justify-center">
+			@SearchForm()
+		</div>
 		<div id="search-results">
 			@Loading()
 		</div>
